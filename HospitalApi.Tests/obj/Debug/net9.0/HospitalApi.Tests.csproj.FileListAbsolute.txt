@@ -1,0 +1,9 @@
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/bin/Debug/net9.0/.msCoverageSourceRootsMapping_HospitalApi.Tests
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/bin/Debug/net9.0/CoverletSourceRootsMapping_HospitalApi.Tests
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.csproj.AssemblyReference.cache
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/MvcTestingAppManifest.json
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.AssemblyInfoInputs.cache
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.AssemblyInfo.cs
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.csproj.CoreCompileInputs.cache
+/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Tests/obj/Debug/net9.0/HospitalApi.Tests.sourcelink.json

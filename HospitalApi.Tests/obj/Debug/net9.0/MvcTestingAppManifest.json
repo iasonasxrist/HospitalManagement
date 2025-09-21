@@ -1,0 +1,6 @@
+{
+  "HospitalApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/iasonaschristoulakis\/Documents\/ASP_NET\/HospitalManagemnent\/HospitalApi.Application",
+  "HospitalApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/iasonaschristoulakis\/Documents\/ASP_NET\/HospitalManagemnent\/HospitalApi",
+  "HospitalApi.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/iasonaschristoulakis\/Documents\/ASP_NET\/HospitalManagemnent\/HospitalApi.Domain",
+  "HospitalApi.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/iasonaschristoulakis\/Documents\/ASP_NET\/HospitalManagemnent\/HospitalApi.Infrastructure"
+}
