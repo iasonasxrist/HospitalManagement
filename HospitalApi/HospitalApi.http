@@ -1,0 +1,399 @@
+@HospitalApi_HostAddress = http://localhost:5212
+
+### Test User Management ###
+
+# Login as admin
+POST {{HospitalApi_HostAddress}}/api/users/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+###
+
+# Login as doctor
+POST {{HospitalApi_HostAddress}}/api/users/login
+Content-Type: application/json
+
+{
+  "username": "dr.smith",
+  "password": "doctor123"
+}
+
+###
+
+# Login as nurse
+POST {{HospitalApi_HostAddress}}/api/users/login
+Content-Type: application/json
+
+{
+  "username": "nurse.jones",
+  "password": "nurse123"
+}
+
+###
+
+# Get all users (Admin only)
+GET {{HospitalApi_HostAddress}}/api/users
+X-User-Role: Admin
+Accept: application/json
+
+###
+
+# Get doctors only
+GET {{HospitalApi_HostAddress}}/api/users/doctors
+X-User-Role: Doctor
+Accept: application/json
+
+###
+
+# Get nurses only
+GET {{HospitalApi_HostAddress}}/api/users/nurses
+X-User-Role: Nurse
+Accept: application/json
+
+###
+
+# Create new doctor (Admin only)
+POST {{HospitalApi_HostAddress}}/api/users
+X-User-Role: Admin
+Content-Type: application/json
+
+{
+  "username": "dr.johnson",
+  "email": "dr.johnson@hospital.com",
+  "password": "doctor456",
+  "firstName": "Michael",
+  "lastName": "Johnson",
+  "role": 1,
+  "phoneNumber": "+1234567893"
+}
+
+###
+
+### Test Patient Management ###
+
+# Create a new patient (Sarah Johnson)
+POST {{HospitalApi_HostAddress}}/api/patients
+Content-Type: application/json
+
+{
+  "firstName": "Sarah",
+  "lastName": "Johnson",
+  "dateOfBirth": "1990-05-15",
+  "gender": "Female",
+  "address": "123 Main St, City, ST 12345",
+  "phoneNumber": "(555) 123-4567",
+  "email": "patient@email.com",
+  "emergencyContact": "John Doe (Spouse)",
+  "emergencyPhone": "(555) 987-6543",
+  "medicalHistory": "Post-Surgery",
+  "allergies": "Penicillin, Latex",
+  "bloodType": "O+",
+  "room": "A-101",
+  "department": "Cardiology",
+  "condition": "Post-Surgery"
+}
+
+###
+
+# Create critical patient (Michael Chen)
+POST {{HospitalApi_HostAddress}}/api/patients
+Content-Type: application/json
+
+{
+  "firstName": "Michael",
+  "lastName": "Chen",
+  "dateOfBirth": "1975-08-22",
+  "gender": "Male",
+  "address": "456 Oak Ave, City, ST 12345",
+  "phoneNumber": "(555) 234-5678",
+  "email": "michael.chen@email.com",
+  "emergencyContact": "Lisa Chen (Spouse)",
+  "emergencyPhone": "(555) 876-5432",
+  "medicalHistory": "Hypertension, Diabetes",
+  "allergies": "Sulfa drugs",
+  "bloodType": "A+",
+  "room": "B-205",
+  "department": "Cardiology",
+  "condition": "Hypertensive Crisis"
+}
+
+###
+
+# Get all patients
+GET {{HospitalApi_HostAddress}}/api/patients
+Accept: application/json
+
+###
+
+# Get critical patients
+GET {{HospitalApi_HostAddress}}/api/patients/critical
+Accept: application/json
+
+###
+
+# Search patients
+GET {{HospitalApi_HostAddress}}/api/patients?search=Sarah
+Accept: application/json
+
+###
+
+# Mark patient as critical
+POST {{HospitalApi_HostAddress}}/api/patients/1/mark-critical
+Content-Type: application/json
+
+"Patient showing signs of severe chest pain and shortness of breath"
+
+###
+
+# Mark patient as stable
+POST {{HospitalApi_HostAddress}}/api/patients/1/mark-stable
+Content-Type: application/json
+
+###
+
+### Test Vital Signs ###
+
+# Record normal vital signs for Sarah Johnson
+POST {{HospitalApi_HostAddress}}/api/vitalsigns
+X-User-Role: Nurse
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "recordedByUserId": 3,
+  "temperature": 98.6,
+  "bloodPressureSystolic": 120,
+  "bloodPressureDiastolic": 80,
+  "heartRate": 72,
+  "oxygenSaturation": 98,
+  "respiratoryRate": 16,
+  "weight": 150.5,
+  "height": 65.0,
+  "notes": "Normal vital signs recorded"
+}
+
+###
+
+# Record critical vital signs for Michael Chen
+POST {{HospitalApi_HostAddress}}/api/vitalsigns
+X-User-Role: Nurse
+Content-Type: application/json
+
+{
+  "patientId": 2,
+  "recordedByUserId": 3,
+  "temperature": 98.6,
+  "bloodPressureSystolic": 180,
+  "bloodPressureDiastolic": 110,
+  "heartRate": 95,
+  "oxygenSaturation": 98,
+  "respiratoryRate": 16,
+  "notes": "Critical blood pressure alert - patient requires immediate attention"
+}
+
+###
+
+# Get patient vital signs
+GET {{HospitalApi_HostAddress}}/api/vitalsigns/patient/1
+X-User-Role: Doctor
+Accept: application/json
+
+###
+
+# Get critical vital signs
+GET {{HospitalApi_HostAddress}}/api/vitalsigns/critical
+X-User-Role: Doctor
+Accept: application/json
+
+###
+
+# Get latest vital signs for patient
+GET {{HospitalApi_HostAddress}}/api/vitalsigns/latest/1
+X-User-Role: Nurse
+Accept: application/json
+
+###
+
+### Test Medical Records ###
+
+# Create medical record
+POST {{HospitalApi_HostAddress}}/api/medicalrecords
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "doctorId": 2,
+  "diagnosis": "Post-Surgical Recovery",
+  "symptoms": "Mild discomfort, healing incision",
+  "treatment": "Pain management, wound care",
+  "prescriptions": "Acetaminophen 500mg as needed",
+  "temperature": 98.6,
+  "bloodPressureSystolic": 120,
+  "bloodPressureDiastolic": 80,
+  "heartRate": 72,
+  "weight": 150.5,
+  "height": 65.0,
+  "isCritical": false,
+  "criticalNotes": null
+}
+
+###
+
+# Create critical medical record
+POST {{HospitalApi_HostAddress}}/api/medicalrecords
+Content-Type: application/json
+
+{
+  "patientId": 2,
+  "doctorId": 2,
+  "diagnosis": "Hypertensive Crisis",
+  "symptoms": "Severe headache, chest pain, shortness of breath",
+  "treatment": "Immediate blood pressure medication, monitoring",
+  "prescriptions": "Labetalol IV, Nitroglycerin",
+  "temperature": 98.6,
+  "bloodPressureSystolic": 180,
+  "bloodPressureDiastolic": 110,
+  "heartRate": 95,
+  "weight": 180.0,
+  "height": 70.0,
+  "isCritical": true,
+  "criticalNotes": "Patient requires immediate intervention for hypertensive crisis"
+}
+
+###
+
+# Get all medical records
+GET {{HospitalApi_HostAddress}}/api/medicalrecords
+Accept: application/json
+
+###
+
+# Get critical medical records
+GET {{HospitalApi_HostAddress}}/api/medicalrecords/critical
+Accept: application/json
+
+###
+
+# Get patient medical records
+GET {{HospitalApi_HostAddress}}/api/medicalrecords/patient/1
+Accept: application/json
+
+###
+
+# Update medical record
+PUT {{HospitalApi_HostAddress}}/api/medicalrecords/1
+Content-Type: application/json
+
+{
+  "diagnosis": "Post-Surgical Recovery - Improving",
+  "treatment": "Continue pain management, physical therapy referral",
+  "isCritical": false,
+  "criticalNotes": "Patient showing good recovery progress"
+}
+
+###
+
+### Test Notifications ###
+
+# Get all notifications
+GET {{HospitalApi_HostAddress}}/api/notifications
+Accept: application/json
+
+###
+
+# Get unread notifications
+GET {{HospitalApi_HostAddress}}/api/notifications/unread
+Accept: application/json
+
+###
+
+# Get critical notifications
+GET {{HospitalApi_HostAddress}}/api/notifications/critical
+Accept: application/json
+
+###
+
+# Mark notification as read
+POST {{HospitalApi_HostAddress}}/api/notifications/1/mark-read
+Content-Type: application/json
+
+###
+
+# Mark all notifications as read
+POST {{HospitalApi_HostAddress}}/api/notifications/mark-all-read
+Content-Type: application/json
+
+###
+
+# Create custom notification
+POST {{HospitalApi_HostAddress}}/api/notifications
+Content-Type: application/json
+
+{
+  "title": "System Maintenance",
+  "message": "Hospital system will be under maintenance from 2-4 AM",
+  "type": 3,
+  "priority": 1,
+  "severity": 0
+}
+
+###
+
+# Create critical blood pressure alert notification
+POST {{HospitalApi_HostAddress}}/api/notifications
+Content-Type: application/json
+
+{
+  "title": "Critical Blood Pressure Alert",
+  "message": "Patient Michael Chen in Room B-205 has blood pressure reading of 180/110 mmHg exceeding critical threshold",
+  "type": 5,
+  "priority": 3,
+  "severity": 3,
+  "patientId": 2,
+  "room": "B-205",
+  "department": "Cardiology",
+  "additionalData": "Current Value: 180/110 mmHg, Normal Range: 120/80 mmHg, Severity: Critical"
+}
+
+###
+
+### Test Role-Based Access Control ###
+
+# Try to access admin endpoint as doctor (should fail)
+GET {{HospitalApi_HostAddress}}/api/users
+X-User-Role: Doctor
+Accept: application/json
+
+###
+
+# Try to access admin endpoint as nurse (should fail)
+GET {{HospitalApi_HostAddress}}/api/users
+X-User-Role: Nurse
+Accept: application/json
+
+###
+
+# Try to create vital signs without role (should fail)
+POST {{HospitalApi_HostAddress}}/api/vitalsigns
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "recordedByUserId": 3,
+  "temperature": 98.6,
+  "bloodPressureSystolic": 120,
+  "bloodPressureDiastolic": 80,
+  "heartRate": 72
+}
+
+###
+
+### Test Weather Forecast (Original) ###
+GET {{HospitalApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
