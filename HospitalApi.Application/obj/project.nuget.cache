@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WZjACAcEKRM=",
+  "success": true,
+  "projectFilePath": "/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Application/HospitalApi.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/iasonaschristoulakis/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
