@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "fkyINZupQzo=",
+  "success": true,
+  "projectFilePath": "/Users/iasonaschristoulakis/Documents/ASP_NET/HospitalManagemnent/HospitalApi.Infrastructure/HospitalApi.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/iasonaschristoulakis/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.entityframeworkcore/9.0.6/microsoft.entityframeworkcore.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.6/microsoft.entityframeworkcore.abstractions.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.6/microsoft.entityframeworkcore.analyzers.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.entityframeworkcore.inmemory/9.0.6/microsoft.entityframeworkcore.inmemory.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.6/microsoft.extensions.caching.abstractions.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.caching.memory/9.0.6/microsoft.extensions.caching.memory.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.6/microsoft.extensions.dependencyinjection.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.6/microsoft.extensions.dependencyinjection.abstractions.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.logging/9.0.6/microsoft.extensions.logging.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.6/microsoft.extensions.logging.abstractions.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.options/9.0.6/microsoft.extensions.options.9.0.6.nupkg.sha512",
+    "/Users/iasonaschristoulakis/.nuget/packages/microsoft.extensions.primitives/9.0.6/microsoft.extensions.primitives.9.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
